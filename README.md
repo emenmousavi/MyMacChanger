@@ -4,7 +4,7 @@ MyMacChanger is a Python script that enables you to change the MAC Address of yo
 
 ## Prerequisites
 - Python 2.x or 3.x
-- optparse, subprocess and re modules
+- argparse, subprocess and re modules
 
 > To install the required modules, run the following command in the terminal:
   ```
