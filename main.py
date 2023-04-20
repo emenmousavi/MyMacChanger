@@ -1,23 +1,23 @@
 #!/usr/bin/env python
 
 import subprocess
-import optparse
+import argparse
 import re
 
 # Get command-line arguments using optparse module
 def get_args():
-    parser = optparse.OptionParser()
+    parser = argparse.ArgumentParser()
     # Add options to the parser
-    parser.add_option("-i", "--interface", dest="interface", help="The Network Interface to change its MAC Address")
-    parser.add_option("-m", "--mac", dest="mymac", help="The New MAC Address")
+    parser.add_argument("-i", "--interface", dest="interface", help="The Network Interface to change its MAC Address")
+    parser.add_argument("-m", "--mac", dest="mymac", help="The New MAC Address")
     # Parse the command-line arguments
-    (options, arguments) = parser.parse_args()
+    args = parser.parse_args()
     # Check if the user has provided both the interface and the new MAC address
-    if not options.interface:
+    if not args.interface:
         parser.error("[-] Please specify an interface, use --help for more info")
-    elif not options.mymac:
+    elif not args.mymac:
         parser.error("[-] Please specify a MAC Address, use --help for more info")
-    return options
+    return args
 
 # Change the MAC address of a network interface
 def changeMac(interface, mymac):
