@@ -4,7 +4,7 @@ import subprocess
 import argparse
 import re
 
-# Get command-line arguments using optparse module
+# Get command-line arguments using argparse module
 def get_args():
     parser = argparse.ArgumentParser()
     # Add options to the parser
