@@ -20,13 +20,13 @@ def get_args():
 def changeMac(interface, mymac):
     print(" [+] Changing the MAC Address for " + interface + " to " + mymac)
     subprocess.call(["ifconfig", interface, "down"])
-    subprocess.call(["ifconfig", interface], "hw", "ether", mymac)
+    subprocess.call(["ifconfig", interface, "hw", "ether", mymac])
     subprocess.call(["ifcofnfig", interface, "up"])
 
 
 def showMac(interface):
     ifconfig = subprocess.check_output(['ifconfig', interface])
-    mac_result = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", ifconfig)
+    mac_result = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", str(ifconfig))
     if mac_result:
         return mac_result.group(0)
     else:
