@@ -26,7 +26,7 @@ def changeMac(interface, mymac):
     # Use the subprocess module to execute the shell command that changes the MAC address
     subprocess.call(["ifconfig", interface, "down"])
     subprocess.call(["ifconfig", interface, "hw", "ether", mymac])
-    subprocess.call(["ifcofnfig", interface, "up"])
+    subprocess.call(["ifconfig", interface, "up"])
 
 # Show the current MAC address of a network interface
 def showMac(interface):
